@@ -12,7 +12,7 @@ import webbrowser
 import Digital_Clock
 import tic_tac_toe
 from word2number import w2n
-client = wolframalpha.Client('demo')
+client = wolframalpha.Client('')
 r = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
