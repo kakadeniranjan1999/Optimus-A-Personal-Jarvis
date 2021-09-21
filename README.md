@@ -36,7 +36,7 @@ It also includes Tic-Tac-Toe and voice controlled games, playing music, web sear
 ## Output
 Here are some output snapshots of the Tic-Tac-Toe game:
 
-<img height="829" src="utils/1.png" width="1283" alt="Main Page" title="Main Page"/>
+<img height="829" src="utils/1.png" width="1283" alt="Main Page" title="1"/>
 
-<img height="829" src="utils/2.png" width="1283" alt="Main Page" title="Main Page"/>
+<img height="829" src="utils/2.png" width="1283" alt="Main Page" title="2"/>
 
