@@ -44,7 +44,7 @@ def timer():
     received_split_text = listen()
     sleep_time = w2n.word_to_num(received_split_text[0])
     if received_split_text[1] == 'minutes' or received_split_text[1] == 'minute':
-        pause_time = ((sleep_time) * 60)
+        pause_time = (sleep_time * 60)
     elif received_split_text[1] == 'seconds' or received_split_text[1] == 'second' or received_split_text[1] == 'sec':
         pause_time = sleep_time
     else:
@@ -66,11 +66,11 @@ def pause():
     received_split_text = listen()
     sleep_time = w2n.word_to_num(received_split_text[0])
     if received_split_text[1] == 'minutes' or received_split_text[1] == 'minute':
-        pause_time = ((sleep_time) * 60)
+        pause_time = (sleep_time * 60)
     elif received_split_text[1] == 'seconds' or received_split_text[1] == 'second' or received_split_text[1] == 'sec':
         pause_time = sleep_time
     else:
-        pause_time = ((sleep_time) * 3600)
+        pause_time = (sleep_time * 3600)
     speakout('ok master going to sleep mode for further couple of seconds')
     time.sleep(pause_time)
     speakout('reinitializing the system')
