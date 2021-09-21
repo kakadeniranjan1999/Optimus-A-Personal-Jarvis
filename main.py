@@ -14,6 +14,7 @@ from word2number import w2n
 
 client = wolframalpha.Client('')
 r = sr.Recognizer()
+r.dynamic_energy_threshold = False
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('rate', 150)
@@ -115,7 +116,7 @@ def listen():
     with sr.Microphone() as source:
         audio = r.listen(source)
         try:
-            listened_text = r.recognize_google(audio)
+            listened_text = r.recognize(audio)
             print("You said : {}".format(listened_text.lower()))
             listened_text = listened_text.lower()
             split_listened_text = listened_text.split()
@@ -217,11 +218,10 @@ def start_conversation():
     with sr.Microphone() as source:
         audio = r.listen(source)
         try:
-            text = r.recognize_google(audio)
+            text = r.recognize(audio)
             print("You said : {}".format(text))
             text = text.lower()
             split_line = text.split()
-            print(split_line)
             if text in well:
                 wellness()
             elif bool(set(split_line).intersection(greeting)) == True:
@@ -264,9 +264,10 @@ def start_conversation():
 
 def start():
     with sr.Microphone() as source:
-        audio = r.listen(source)
+        print('Please speakout authentication id to move ahead...')
+        audio = r.listen(source, timeout=10)
         try:
-            text = r.recognize_google(audio)
+            text = r.recognize(audio)
             print("You said : {}".format(text))
             text = text.lower()
             if text == 'hello optimus':
@@ -276,10 +277,10 @@ def start():
                 speakout('System ready for use...')
                 greet()
                 start_conversation()
-
-
+            else:
+                speakout("Couldn't authenticate")
         except:
-            speakout("Couldn't authenticate")
+            speakout("Something went wrong....")
 
 
 start()
