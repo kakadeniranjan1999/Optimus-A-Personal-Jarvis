@@ -96,7 +96,7 @@ def inbuilt_game():
 
 
 def chromium_search(search_text):
-    chromium_path = 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'  # put path of chromium browser in raspberry pi
+    chromium_path = '/usr/bin/google-chrome'  # put path of chromium browser in raspberry pi
     speakout('What shall i search on' + search_text)
     term = listen()
     if term == 'None':
